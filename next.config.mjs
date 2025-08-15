@@ -3,12 +3,15 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
   },
-  
+
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  
+
   webpack: (config, { isServer }) => {
+    // ADICIONE ESTA LINHA AQUI
+    config.cache = false;
+
     if (!isServer) {
       config.optimization.splitChunks = {
         chunks: 'all',
@@ -37,3 +40,4 @@ const nextConfig = {
 };
 
 export default nextConfig;
+
