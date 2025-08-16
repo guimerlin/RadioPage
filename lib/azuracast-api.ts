@@ -1,5 +1,5 @@
 // AzuraCast API integration for radios.bandito.site
-const AZURACAST_BASE_URL = "https://radios.bandito.site"
+const AZURACAST_BASE_URL = "https://radios.cesaria.shop"
 
 export interface NowPlayingData {
   station: {
