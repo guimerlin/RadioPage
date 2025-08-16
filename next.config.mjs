@@ -1,27 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
+    optimizePackageImports: ['lucide-react'],
   },
-  
-  compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
-  },
-  
+
+  // Configuração do Webpack para resolver o erro de build no Cloudflare
   webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.optimization.splitChunks = {
-        chunks: 'all',
-        cacheGroups: {
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            chunks: 'all',
-            maxSize: 20000000, // 20MB limit
-          },
-        },
-      };
-    }
+    // Esta linha desativa o cache do webpack que estava gerando o arquivo .pack gigante
+    config.cache = false;
     return config;
   },
 
@@ -37,3 +23,5 @@ const nextConfig = {
 };
 
 export default nextConfig;
+
+
