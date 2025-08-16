@@ -28,3 +28,12 @@ Para garantir a compatibilidade e evitar problemas de build, você pode adiciona
 Com essas configurações, seu projeto deve ser implantado com sucesso no Cloudflare Pages.
 
 
+
+
+## 5. Habilitar a Flag `nodejs_compat`
+
+Este é um passo crucial para projetos Next.js no Cloudflare Pages. Vá para a seção **Compatibility Flags** (ou **Flags de Compatibilidade**) nas configurações do seu projeto no Cloudflare Pages e adicione a flag `nodejs_compat` para os ambientes de produção e preview.
+
+Esta flag garante que o ambiente de build e execução do Cloudflare Pages seja compatível com as funcionalidades do Node.js que o Next.js utiliza.
+
+
