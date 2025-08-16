@@ -1,33 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
+    optimizePackageImports: ['lucide-react'],
   },
-
-  compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
-  },
-
-  webpack: (config, { isServer }) => {
-    // ADICIONE ESTA LINHA AQUI
-    config.cache = false;
-
-    if (!isServer) {
-      config.optimization.splitChunks = {
-        chunks: 'all',
-        cacheGroups: {
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            chunks: 'all',
-            maxSize: 20000000, // 20MB limit
-          },
-        },
-      };
-    }
-    return config;
-  },
-
+  
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -40,4 +16,3 @@ const nextConfig = {
 };
 
 export default nextConfig;
-
