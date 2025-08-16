@@ -1,6 +1,6 @@
 # Configurações para Deploy no Cloudflare Pages
 
-Para fazer o deploy do seu projeto `RadioPage` no Cloudflare Pages, siga as instruções abaixo:
+Para fazer o deploy do seu projeto `RadioPaage` no Cloudflare Pages, siga as instruções abaixo:
 
 ## 1. Conectar o Repositório GitHub
 
