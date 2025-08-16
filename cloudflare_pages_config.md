@@ -11,7 +11,7 @@ No painel do Cloudflare Pages, conecte seu repositório GitHub (`guimerlin/Radio
 Ao configurar o projeto no Cloudflare Pages, utilize as seguintes configurações:
 
 *   **Framework preset:** `Next.js`
-*   **Build command:** `npm run build`
+*   **Build command:** `npx @cloudflare/next-on-pages`
 *   **Build output directory:** `.vercel/output/static`
 
 ## 3. Variáveis de Ambiente (Opcional, mas recomendado)
